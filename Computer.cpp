@@ -1,6 +1,5 @@
 #include <iostream>
 #include "Computer.h"
-#include <fstream>
 
 using namespace std;
 
