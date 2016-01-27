@@ -12,7 +12,6 @@ Hangman::Hangman(){
 
 void Hangman::animals()
 {
-	int i, n=6, c, c1, r;
 	char x, vet1[6], vet2[6], vet3[3], v1[6], v2[6], v3[3];
 	time_t t;
 	
@@ -48,7 +47,6 @@ void Hangman::animals()
 
 void Hangman::fruits()
 {
-	int i, n=6, c, c1, r;
 	char x, vet1[4], vet2[6], vet3[10], v1[4], v2[6], v3[10];
 	time_t t;
 	
@@ -84,7 +82,6 @@ void Hangman::fruits()
 
 void Hangman::movies()
 {
-	int i, n=6, c, c1, r;
 	char x, vet1[6], vet2[7], vet3[7], v1[6], v2[7], v3[7];
 	time_t t;
 	
@@ -120,7 +117,6 @@ void Hangman::movies()
 
 void Hangman::princess()
 {
-	int i, n=6, c, c1, r;
 	char x, vet1[4], vet2[5], vet3[5], v1[4], v2[5], v3[5];
 	time_t t;
 	
