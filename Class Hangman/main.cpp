@@ -7,7 +7,7 @@ int main ()
 	Hangman hang;
 	cout << "          -- Hangman Game --          ";
 	do{
-	cout << "\n\n Chose a theme \n\n 1 - Animals         4 - Disney Princesses  \n 2 - Fruits          0 - Exit \n 3 - Movies \n ";
+	cout << "\n\n Choose a theme \n\n 1 - Animals         4 - Disney Princesses  \n 2 - Fruits          0 - Exit \n 3 - Movies \n ";
 	cin >> op;
 	
 	switch(op){
