@@ -5,18 +5,21 @@ using namespace std;
 
 class Computer
 {
-      private:
-      		  string userName;
-      		  string password;
-      		  string textFile;
-              float availableStorage=1;
-      public:
-      	     Computer();
-             void exeGame();
-             void exeEditor();
-             void logIn();
-             void logOff();	
-             void newUser();
-};
+	 public:
+     Computer();
+     Computer (const Computer &other);
+     void exeGame();
+	 void exeEditor();
+     void logIn();
+     void logOff();	
+     void newUser();
 
+     private:
+     string userName;
+     string password;
+     string textFile;
+     float availableStorage;
+     
+     static string biosVersion;
+};
 

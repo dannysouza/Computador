@@ -6,7 +6,20 @@
 
 using namespace std;
 
+string Computer::biosVersion = "biosDefault";
+	
 Computer::Computer(){
+	
+	userName="User";
+	password="1020";
+	availableStorage=1;
+}
+
+Computer::Computer(const Computer &c){
+	userName=c.userName;
+	password=c.password;
+	textFile=c.textFile;
+	availableStorage=c.availableStorage;
 }
 
 void Computer::exeGame()
