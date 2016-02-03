@@ -6,11 +6,17 @@ using namespace std;
 class Computer
 {
       private:
-              string textFile;
-              float availableStorage=1;
+      		  string userName;
+      		  string password;
+      		  string textFile;
+              float availableStorage;
       public:
       	     Computer();
              void exeGame();
              void exeEditor();
+             void logIn();
+             void logOff();	
+             void newUser();
 };
-             
+
+

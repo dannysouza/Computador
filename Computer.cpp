@@ -1,10 +1,12 @@
 #include <iostream>
 #include "Computer.h"
+#include <windows.h>
+#include <string>
+
 
 using namespace std;
 
 Computer::Computer(){
-	
 }
 
 void Computer::exeGame()
@@ -35,13 +37,13 @@ void Computer::exeEditor()
                  cout << "\n\n File name: ";
                  cin >> name;
 
-
                  cout << "\n\n File saved as " << name << ".txt";
 		 		 availableStorage -= textFile.size();
 		 		 cout << "\n\n Size of the file: " << textFile.size();
                  break;
             
-            case 'N':
+            case 
+			'N':
             case 'n':
             
                  cout << "\n\n File not saved. ";
@@ -52,3 +54,51 @@ void Computer::exeEditor()
      } 
      }while ( (opt != 'y') && (opt != 'Y') && (opt != 'N') && (opt != 'n') );	
 }
+
+void Computer::logIn()
+{
+	string name, pass;
+	do{
+		cout << "\n User name: ";
+		cin >> name;
+		cout << "\n Password: ";
+		cin >> pass;
+		if ((name == userName) && (pass == password))
+			cout << "\n Welcome, " << name;
+		else
+			cout << "\n Invalid user name or password. ";
+	}while((name != userName) && (pass != password));
+}
+
+
+void Computer::newUser()
+{
+	
+	cout << "\n Choose a user name: ";
+	cin >> userName;
+	cout << "\n Choose a password: ";
+	cin >> password;
+	cout << "\n\n User account created. ";
+}
+
+void Computer::logOff()
+{
+		int opt;
+		string name, pass;
+		
+	    do{
+    	cout << "\n 1 - Login as guest \n 2 - Login as user \n 0 - Turn off ";
+    	cin >> opt;
+    	switch (opt){
+    		case 1:
+    			break;
+    		case 2:
+    			logIn();
+    			break;
+    		default:
+    			cout << "\n Choose an option ";
+    		}
+    		break;	
+		}while (opt != 0);
+}
+
