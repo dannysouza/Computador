@@ -9,7 +9,7 @@ class Computer
       		  string userName;
       		  string password;
       		  string textFile;
-              float availableStorage;
+              float availableStorage=1;
       public:
       	     Computer();
              void exeGame();

@@ -41,7 +41,6 @@ void Computer::exeEditor()
 		 		 availableStorage -= textFile.size();
 		 		 cout << "\n\n Size of the file: " << textFile.size();
                  break;
-            
             case 
 			'N':
             case 'n':

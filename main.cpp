@@ -27,9 +27,6 @@ int main(){
     				break;
     			case 4:
     				c1.logOff();
-                case 0:	
-                    cout << "\n\n Turning off... ";
-                    break;
                 default:
                     cout << "\n\n -- Choose an option -- ";
          }
