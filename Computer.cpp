@@ -114,3 +114,11 @@ void Computer::logOff()
 		}while (opt != 0);
 }
 
+void Computer::updateWindowsVersion(int windowsVersion)
+{
+	cout << "\n Current version: " << windowsVersion;
+	cout << "\n Latest version available: " << latestVersion;
+	
+	windowsVersion = latestVersion;
+}
+

@@ -12,7 +12,7 @@ int main(){
     
     cout << "\n\n          Welcome          \n\n ";
     do{
-         cout << "\n\n 1 - Execute Game \n 2 - Execute Text Editor \n 3 - Create new user account \n 4 - Log Off \n 0 - Turn Off \n";
+         cout << "\n\n 1 - Execute Game \n 2 - Execute Text Editor \n 3 - Create new user account \n 4 - Log Off \n 5 - Update Windows \n 0 - Turn Off \n";
          cin >> opt;
          switch (opt)
          {
@@ -27,6 +27,8 @@ int main(){
     				break;
     			case 4:
     				c1.logOff();
+    			case 5:
+    				c1.updateWindowsVersion();
                 default:
                     cout << "\n\n -- Choose an option -- ";
          }
