@@ -8,15 +8,18 @@
 using namespace std;
 
 	
-Computer::Computer(){
+Computer::Computer()
+:downloadDate()
+{
 	
 	userName="User";
 	password="1020";
 	availableStorage=1;
-	downloadDate();
 }
 
-Computer::Computer(const Computer &c){
+Computer::Computer(const Computer &c)
+:downloadDate()
+{
 	userName=c.userName;
 	password=c.password;
 	availableStorage=c.availableStorage;
