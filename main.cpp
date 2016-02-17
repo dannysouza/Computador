@@ -8,6 +8,9 @@ int main(){
     Computer c1;
     
 	c1.logOff();
+	
+	
+	Computer::launchNewVersion();
     
     
     cout << "\n\n          Welcome          \n\n ";

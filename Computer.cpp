@@ -2,11 +2,11 @@
 #include "Computer.h"
 #include <windows.h>
 #include <string>
+#include <time.h>
 
 
 using namespace std;
 
-string Computer::biosVersion = "biosDefault";
 	
 Computer::Computer(){
 	
@@ -18,7 +18,6 @@ Computer::Computer(){
 Computer::Computer(const Computer &c){
 	userName=c.userName;
 	password=c.password;
-	textFile=c.textFile;
 	availableStorage=c.availableStorage;
 }
 
@@ -114,11 +113,31 @@ void Computer::logOff()
 		}while (opt != 0);
 }
 
-void Computer::updateWindowsVersion(int windowsVersion)
+void Computer::updateWindowsVersion()
 {
-	cout << "\n Current version: " << windowsVersion;
-	cout << "\n Latest version available: " << latestVersion;
+	cout << "\n Current version: " << currentWindowsVersion;
+	cout << "\n Latest version available: " << latestWindowsVersion;
+	cout << "\n\n	Windows is downloading files... ";
 	
-	windowsVersion = latestVersion;
+	downloadDate = currentDateTime();
+	
+	currentWindowsVersion = latestWindowsVersion;
+	
+	cout << "\n Windows has been updated to version " << latestWindowsVersion;
+}
+
+void Computer::launchNewVersion(float newVersion)
+{
+	latestWindowsVersion = newVersion;
+}
+
+const string currentDateTime() {
+    time_t     now = time(0);
+    struct tm  tstruct;
+    char       buf[80];
+    tstruct = *localtime(&now);
+    strftime(buf, sizeof(buf), "%Y-%m-%d.%X", &tstruct);
+
+    return buf;
 }
 
