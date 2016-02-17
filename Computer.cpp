@@ -29,13 +29,13 @@ void Computer::exeGame()
 
 void Computer::exeEditor()
 {
-     string name;
+     string name, text;
      char opt;
      
      cout << " -- Text Editor -- \n\n ";
      cout << " (Press '@' to terminate) \n\n ";
      do{
-	 textFile = cin.get();
+	 text = cin.get();
 	 }while(cin.get()!= '@');
      cout << "\n\n Save the file? \n Yes (Y) or No (N) ";   
      do{
@@ -51,8 +51,8 @@ void Computer::exeEditor()
                  cin >> name;
 
                  cout << "\n\n File saved as " << name << ".txt";
-		 		 availableStorage -= textFile.size();
-		 		 cout << "\n\n Size of the file: " << textFile.size();
+		 		 availableStorage -= text.size();
+		 		 cout << "\n\n Size of the file: " << text.size();
                  break;
             case 
 			'N':

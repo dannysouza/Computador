@@ -18,11 +18,9 @@ class Computer
      private:
 	     string userName;
 	     string password;
-	     string textFile;
 	     float availableStorage;
-	     
-	     static int windowsVersion=8;
-	     static int latestVersion;
+	     int currentWindowsVersion=8;
+	     static int latestWindowsVersion;
 	     
 
 };
