@@ -13,6 +13,7 @@ Computer::Computer(){
 	userName="User";
 	password="1020";
 	availableStorage=1;
+	downloadDate();
 }
 
 Computer::Computer(const Computer &c){

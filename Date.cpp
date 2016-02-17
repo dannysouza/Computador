@@ -3,11 +3,14 @@
 
 using namespace std;
 
-Date::Date()
+Date::Date(int day, int month, int year)
 {
+	this -> day = checkDay(day); 
+	this -> month = month;
+	this -> year = year;
 }
 
-int Date::checkDay( int ) const
+int Date::checkDay( int day ) const
 {
 	static const int daysPerMounth[13] = {0, 31, 28, 31, 30, 30, 31, 31, 30, 31, 30, 31};
 	if(day>0 && day <=daysPerMounth[mounth])

@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string.h>
-#include <Date.h>
+#include "Date.h"
 
 using namespace std;
 
@@ -15,7 +15,7 @@ class Computer
      	void logOff();	
      	void newUser();
      	void updateWindowsVersion();
-     	static void launchNewVersion();
+     	static void launchNewVersion(float NewVersion);
      	const string currentDateTime();
 
      private:
