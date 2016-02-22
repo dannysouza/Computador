@@ -11,10 +11,10 @@ using namespace std;
 Computer::Computer()
 :downloadDate()
 {
-	
-	userName="User";
+	userName[0]="User";
 	password="1020";
 	availableStorage=1;
+	usersQuant=0;
 }
 
 Computer::Computer(const Computer &c)
@@ -87,13 +87,33 @@ void Computer::logIn()
 
 
 void Computer::newUser()
-{
+{	
+	string name;
+	int i;
 	
 	cout << "\n Choose a user name: ";
-	cin >> userName;
+	cin >> name;
+
+	string *aux = new string[usersQuant];
+	
+	for(int i=0; i<usersQuant, i++)
+		aux[i] = userName[i];
+		
+	delete [] userName;
+	
+	userName = new string [++usersQuant];
+	
+	for(int i=0; i<usersQuant-1, i++)
+	userName[i] = aux[i];
+		
+	userName[usersQuant-1] = name
+	
+	delete [] aux;
+
 	cout << "\n Choose a password: ";
 	cin >> password;
 	cout << "\n\n User account created. ";
+	
 }
 
 void Computer::logOff()

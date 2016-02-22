@@ -13,10 +13,10 @@ Date::Date(int day, int month, int year)
 int Date::checkDay( int day ) const
 {
 	static const int daysPerMounth[13] = {0, 31, 28, 31, 30, 30, 31, 31, 30, 31, 30, 31};
-	if(day>0 && day <=daysPerMounth[mounth])
+	if(day>0 && day <=daysPerMounth[month])
 		return day;
 		
-	if(mounth==2 && day == 29 && (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0) ) ) // test bissextile year
+	if(month==2 && day == 29 && (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0) ) ) // test bissextile year
 		return day;
 		
 	cout << "\n\n Invalid day";

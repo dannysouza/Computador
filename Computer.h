@@ -19,11 +19,13 @@ class Computer
      	const string currentDateTime();
 
      private:
-	     string userName;
+     	 int usersQuant; 
+	     string *userName[];
 	     string password;
 	     float availableStorage;
 	     float currentWindowsVersion;
 	     static int latestWindowsVersion;
 	     Date downloadDate;
+	     
 };
 
