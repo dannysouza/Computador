@@ -11,7 +11,6 @@ using namespace std;
 Computer::Computer()
 :downloadDate()
 {
-	userName[0]="User";
 	password="1020";
 	availableStorage=1;
 	usersQuant=0;
@@ -20,7 +19,6 @@ Computer::Computer()
 Computer::Computer(const Computer &c)
 :downloadDate()
 {
-	userName=c.userName;
 	password=c.password;
 	availableStorage=c.availableStorage;
 }
@@ -101,12 +99,12 @@ void Computer::newUser()
 		
 	delete [] userName;
 	
-	userName = new string [++usersQuant];
+	userName = new string[++usersQuant];
 	
 	for(int i=0; i<usersQuant-1, i++)
-	userName[i] = aux[i];
+		userName[i] = aux[i];
 		
-	userName[usersQuant-1] = name
+	userName[usersQuant-1] = name;
 	
 	delete [] aux;
 

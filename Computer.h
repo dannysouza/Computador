@@ -15,7 +15,7 @@ class Computer
      	void logOff();	
      	void newUser();
      	void updateWindowsVersion();
-     	static void launchNewVersion(float NewVersion);
+     	static void launchNewVersion();
      	const string currentDateTime();
 
      private:
