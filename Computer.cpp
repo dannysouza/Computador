@@ -13,7 +13,7 @@ Computer::Computer()
 {
 	password="1020";
 	availableStorage=1;
-	usersQuant=0;
+	usersQuant=1;
 }
 
 Computer::Computer(const Computer &c)
@@ -71,16 +71,25 @@ void Computer::exeEditor()
 void Computer::logIn()
 {
 	string name, pass;
+	int i;
+	
 	do{
 		cout << "\n User name: ";
 		cin >> name;
 		cout << "\n Password: ";
-		cin >> pass;
-		if ((name == userName) && (pass == password))
-			cout << "\n Welcome, " << name;
-		else
+		cin >> password;
+		
+		for(i=0;i<usersQuant;i++)
+		{
+			if ((name == users[i]) && (pass == passwords[i]))
+			{
+				cout << "\n Welcome, " << name;
+				break;
+			}
+			else
 			cout << "\n Invalid user name or password. ";
-	}while((name != userName) && (pass != password));
+		}
+	}while((name != users[i]) && (pass != passwords[i]));
 }
 
 
@@ -90,26 +99,43 @@ void Computer::newUser()
 	int i;
 	
 	cout << "\n Choose a user name: ";
-	cin >> name;
+	cin >> userName;
 
 	string *aux = new string[usersQuant];
 	
 	for(int i=0; i<usersQuant, i++)
-		aux[i] = userName[i];
+		aux[i] = users[i];
 		
-	delete [] userName;
+	delete [] users;
 	
-	userName = new string[++usersQuant];
+	users = new string[++usersQuant];
 	
 	for(int i=0; i<usersQuant-1, i++)
-		userName[i] = aux[i];
+		users[i] = aux[i];
 		
-	userName[usersQuant-1] = name;
+	users[usersQuant-1] = userName;
 	
 	delete [] aux;
 
 	cout << "\n Choose a password: ";
 	cin >> password;
+	
+	string *aux2 = new string[usersQuant];
+	
+	for(int i=0; i<usersQuant, i++)
+		aux2[i] = passwords[i];
+		
+	delete [] passwords;
+	
+	passwords = new string[++usersQuant];
+	
+	for(int i=0; i<usersQuant-1, i++)
+		passwords[i] = aux2[i];
+		
+	passwords[usersQuant-1] = password;
+	
+	delete [] aux2;
+	
 	cout << "\n\n User account created. ";
 	
 }

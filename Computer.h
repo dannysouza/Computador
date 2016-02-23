@@ -20,8 +20,8 @@ class Computer
 
      private:
      	 int usersQuant; 
-	     string *userName[];
-	     string password;
+	     string *users;
+	     string *passwords;
 	     float availableStorage;
 	     float currentWindowsVersion;
 	     static int latestWindowsVersion;
