@@ -29,8 +29,9 @@ void Date::currentDateTime() {
     tm *ltm = localtime(&now);
     
     this->day = ltm->tm_mday;
-    this->month = ltm->tm_mon;
-    this->year = ltm->tm_year;
+    this->month = ltm->tm_mon+1;
+    this->year = ltm->tm_year+1900;
+    
 }
 
 void Date::displayDate(){

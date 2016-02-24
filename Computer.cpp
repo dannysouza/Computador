@@ -8,20 +8,19 @@
 using namespace std;
 
 float Computer::latestWindowsVersion=8.0;
+int Computer::usersQuant=1;
 	
 Computer::Computer()
 :downloadDate()
 {
 	availableStorage=1;
-	usersQuant=1;
-	currentWindowsVersion=8;
+	currentWindowsVersion=8.0;
 }
 
 Computer::Computer(const Computer &c)
 :downloadDate()
 {
 	availableStorage=c.availableStorage;
-	usersQuant=c.usersQuant;
 	currentWindowsVersion=c.currentWindowsVersion;
 }
 

@@ -7,7 +7,7 @@ class Date
 	public:
 		Date(int = 1, int = 1, int = 1990);
 		void currentDateTime();
-		void displayDate() const;
+		void displayDate();
 		~Date();
 	
 	private:
