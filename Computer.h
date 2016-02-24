@@ -24,7 +24,7 @@ class Computer
 	     string *passwords;
 	     float availableStorage;
 	     float currentWindowsVersion;
-	     static int latestWindowsVersion;
+	     static float latestWindowsVersion;
 	     Date downloadDate;
 	     
 };

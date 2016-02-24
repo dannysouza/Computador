@@ -11,16 +11,19 @@ using namespace std;
 Computer::Computer()
 :downloadDate()
 {
-	password="1020";
 	availableStorage=1;
 	usersQuant=1;
+	currentWindowsVersion=8;
+	latestWindowsVersion=8.1;
 }
 
 Computer::Computer(const Computer &c)
 :downloadDate()
 {
-	password=c.password;
 	availableStorage=c.availableStorage;
+	usersQuant=c.usersQuant;
+	currentWindowsVersion=c.currentWindowsVersion;
+	latestWindowsVersion=c.latestWindowsVersion;
 }
 
 void Computer::exeGame()
@@ -70,7 +73,7 @@ void Computer::exeEditor()
 
 void Computer::logIn()
 {
-	string name, pass;
+	string name, password;
 	int i;
 	
 	do{
@@ -81,7 +84,7 @@ void Computer::logIn()
 		
 		for(i=0;i<usersQuant;i++)
 		{
-			if ((name == users[i]) && (pass == passwords[i]))
+			if ((name == users[i]) && (password == passwords[i]))
 			{
 				cout << "\n Welcome, " << name;
 				break;
@@ -89,13 +92,13 @@ void Computer::logIn()
 			else
 			cout << "\n Invalid user name or password. ";
 		}
-	}while((name != users[i]) && (pass != passwords[i]));
+	}while((name != users[i]) && (password != passwords[i]));
 }
 
 
 void Computer::newUser()
 {	
-	string name;
+	string userName, password;
 	int i;
 	
 	cout << "\n Choose a user name: ";
@@ -103,14 +106,14 @@ void Computer::newUser()
 
 	string *aux = new string[usersQuant];
 	
-	for(int i=0; i<usersQuant, i++)
+	for(int i=0; i<usersQuant; i++)
 		aux[i] = users[i];
 		
 	delete [] users;
 	
 	users = new string[++usersQuant];
 	
-	for(int i=0; i<usersQuant-1, i++)
+	for(int i=0; i<usersQuant-1; i++)
 		users[i] = aux[i];
 		
 	users[usersQuant-1] = userName;
@@ -122,14 +125,14 @@ void Computer::newUser()
 	
 	string *aux2 = new string[usersQuant];
 	
-	for(int i=0; i<usersQuant, i++)
+	for(int i=0; i<usersQuant; i++)
 		aux2[i] = passwords[i];
 		
 	delete [] passwords;
 	
 	passwords = new string[++usersQuant];
 	
-	for(int i=0; i<usersQuant-1, i++)
+	for(int i=0; i<usersQuant-1; i++)
 		passwords[i] = aux2[i];
 		
 	passwords[usersQuant-1] = password;
@@ -169,14 +172,18 @@ void Computer::updateWindowsVersion()
 	
 	downloadDate = currentDateTime();
 	
+	cout << "\n\n Download date: " <<downloadDate;
+	
 	currentWindowsVersion = latestWindowsVersion;
 	
 	cout << "\n Windows has been updated to version " << latestWindowsVersion;
+	
+	launchNewVersion();
 }
 
-void Computer::launchNewVersion(float newVersion)
+void Computer::launchNewVersion()
 {
-	latestWindowsVersion = newVersion;
+	latestWindowsVersion += 0.1;
 }
 
 const string currentDateTime() {
