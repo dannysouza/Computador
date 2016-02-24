@@ -16,10 +16,9 @@ class Computer
      	void newUser();
      	void updateWindowsVersion();
      	static void launchNewVersion();
-     	const string currentDateTime();
 
      private:
-     	 int usersQuant; 
+     	 static int usersQuant; 
 	     string *users;
 	     string *passwords;
 	     float availableStorage;

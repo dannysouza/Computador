@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Date.h"
+#include <ctime>
 
 using namespace std;
 
@@ -21,4 +22,21 @@ int Date::checkDay( int day ) const
 		
 	cout << "\n\n Invalid day";
 	return 1;
+}
+
+void Date::currentDateTime() {
+    time_t     now = time(0);
+    tm *ltm = localtime(&now);
+    
+    this->day = ltm->tm_mday;
+    this->month = ltm->tm_mon;
+    this->year = ltm->tm_year;
+}
+
+void Date::displayDate(){
+	cout << day << "/" << month << "/" << year;
+}
+
+Date::~Date()
+{
 }

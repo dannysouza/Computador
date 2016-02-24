@@ -7,6 +7,7 @@
 
 using namespace std;
 
+float Computer::latestWindowsVersion=8.0;
 	
 Computer::Computer()
 :downloadDate()
@@ -14,7 +15,6 @@ Computer::Computer()
 	availableStorage=1;
 	usersQuant=1;
 	currentWindowsVersion=8;
-	latestWindowsVersion=8.1;
 }
 
 Computer::Computer(const Computer &c)
@@ -23,7 +23,6 @@ Computer::Computer(const Computer &c)
 	availableStorage=c.availableStorage;
 	usersQuant=c.usersQuant;
 	currentWindowsVersion=c.currentWindowsVersion;
-	latestWindowsVersion=c.latestWindowsVersion;
 }
 
 void Computer::exeGame()
@@ -170,9 +169,10 @@ void Computer::updateWindowsVersion()
 	cout << "\n Latest version available: " << latestWindowsVersion;
 	cout << "\n\n	Windows is downloading files... ";
 	
-	downloadDate = currentDateTime();
+	downloadDate.currentDateTime();
 	
-	cout << "\n\n Download date: " <<downloadDate;
+	cout << "\n\n Download date: ";
+	downloadDate.displayDate();
 	
 	currentWindowsVersion = latestWindowsVersion;
 	
@@ -185,14 +185,5 @@ void Computer::launchNewVersion()
 {
 	latestWindowsVersion += 0.1;
 }
-
-const string currentDateTime() {
-    time_t     now = time(0);
-    struct tm  tstruct;
-    char       buf[80];
-    tstruct = *localtime(&now);
-    strftime(buf, sizeof(buf), "%Y-%m-%d.%X", &tstruct);
-
-    return buf;
-}
+ 
 
