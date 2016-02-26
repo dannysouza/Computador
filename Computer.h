@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string.h>
 #include "Date.h"
+#include "HardDisk.h"
 
 using namespace std;
 
@@ -16,15 +17,17 @@ class Computer
      	void newUser();
      	void updateWindowsVersion();
      	static void launchNewVersion();
+     	void format();
 
      private:
-     	 static int usersQuant; 
+     	 int usersQuant; 
 	     string *users;
 	     string *passwords;
-	     float availableStorage;
+	     HardDisk availableStorage;
 	     float currentWindowsVersion;
 	     static float latestWindowsVersion;
 	     Date downloadDate;
+	     HardDisk hd;
 	     
 };
 

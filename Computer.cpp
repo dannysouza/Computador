@@ -8,19 +8,21 @@
 using namespace std;
 
 float Computer::latestWindowsVersion=8.0;
-int Computer::usersQuant=1;
 	
 Computer::Computer()
 :downloadDate()
+:hd();
 {
 	availableStorage=1;
+	usersQuant = 1;
 	currentWindowsVersion=8.0;
 }
 
 Computer::Computer(const Computer &c)
 :downloadDate()
 {
-	availableStorage=c.availableStorage;
+	availableStorage = c.availableStorage;
+	usersQuant = c.usersQuant;
 	currentWindowsVersion=c.currentWindowsVersion;
 }
 
@@ -45,6 +47,8 @@ void Computer::exeEditor()
      switch (opt){
             case 'Y':
             case 'y':
+            	
+            	
             	if (availableStorage==0){
             		cout << "\n\n Not enough space available. ";
             		break;}
@@ -185,4 +189,22 @@ void Computer::launchNewVersion()
 	latestWindowsVersion += 0.1;
 }
  
+void Computer::format()
+{
+	int op;
+	cout << "\n Are you sure you want to format the Hard Disk? \n\n 1 - Yes \n 2 - No";
+	cin >> op;
+	
+	do{
+		switch (op)
+		{
+			case 1:
+				availableStorage = hd.formatHD();
+				break;
+			case 2:
+				cout << "\n Hard disk not formatted. ";
+				break;
+		}
+	}while(op != 'y' && op != 'n');
+}
 
