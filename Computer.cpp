@@ -116,6 +116,7 @@ void Computer::operator=(const Computer &comp){
     delete [] passwords;
     
     users = new string[this->usersQuant];
+    passwords = new string[this->usersQuant];
     
     for (int i=0;i<usersQuant;i++){
         this->users[i] = comp.users[i];
