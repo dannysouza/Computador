@@ -23,11 +23,9 @@ class Computer : public Device
      	 int usersQuant; 
 	     string *users;
 	     string *passwords;
-	     HardDisk availableStorage;
 	     float currentWindowsVersion;
 	     static float latestWindowsVersion;
 	     Date downloadDate;
-	     HardDisk hd;
-	     
+	     HardDisk availableStorage;
 };
 

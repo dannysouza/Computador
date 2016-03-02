@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Layout>
+	<Files>
+		<File Name="Device.h" Top="No" Tabpos="1" TopLine="1">
+			<Cursor Line="8" Column="17"/>
+			<Selection Line="8" Column="13"/>
+		</File>
+		<File Name="Device.cpp" Top="Yes" Tabpos="2" TopLine="1">
+			<Cursor Line="16" Column="1"/>
+		</File>
+	</Files>
+</Layout>
