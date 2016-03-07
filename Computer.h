@@ -7,6 +7,7 @@
 
 #include "Device.h"
 #include "Date.h"
+#include "NetworkAdapter.h"
 
 class Computer : public Device 
 {
@@ -24,6 +25,10 @@ class Computer : public Device
 		
 		const Computer &operator=(const Computer &);
 	    bool operator==(const Computer &) const;
+	    
+	    void installNetworkDrivers();
+	    
+	    void connectToInternet();
 		
      protected:
      	string operationalSystem;
@@ -33,8 +38,9 @@ class Computer : public Device
      	string *passwords;
      	float currentOSVersion;
      	static float latestOSVersion;
-     	Date downloadDate;
      	int usersQuant;
+     	Date downloadDate;
+     	NetworkAdapter network;
 };
 
 #endif 

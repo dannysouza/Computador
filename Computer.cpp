@@ -142,3 +142,13 @@ bool Computer::operator==(const Computer &comp) const{
 	}
 	return true;
 }
+
+void Computer::installNetworkDrivers()
+{
+	network.installDrivers();
+}
+
+void Computer::connectToInternet()
+{
+	network.connectToInternet();
+}
