@@ -20,7 +20,8 @@ class Computer : public Device
 		
 		bool logIn(const string &, const string &);
 		void logOff();
-		void updatedOS();
+		
+		virtual void updatedOS();
 		static void launchOSVersion();
 		
 		const Computer &operator=(const Computer &);
@@ -29,6 +30,8 @@ class Computer : public Device
 	    void installNetworkDrivers();
 	    
 	    void connectToInternet();
+	    
+	    virtual void displayWelcomeScreen() = 0; 
 		
      protected:
      	string operationalSystem;

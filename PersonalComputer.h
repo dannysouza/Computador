@@ -17,6 +17,8 @@ class PersonalComputer : public Computer
 		void exeGame();
 		void createNewUser();
 		
+		virtual void displayWelcomeScreen();
+		
 	private:
 		string name;
 };

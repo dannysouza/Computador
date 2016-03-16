@@ -12,6 +12,8 @@ class Device
     	void turnOn();
     	void turnOff();
     	
+    	virtual void displayWelcomeScreen() = 0;
+    	
 	protected:
 		bool turnedOn;
 		float storageCapacity;

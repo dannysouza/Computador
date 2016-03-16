@@ -105,7 +105,8 @@ ostream& operator<<(ostream &output, const Computer &display)
     return output;
 }
 
-void Computer::operator=(const Computer &comp){
+void Computer::operator=(const Computer &comp)
+{
     this->operationalSystem = comp.operationalSystem;
     this->hdSize = comp.hdSize;
     this->availableStorage = comp.availableStorage;
@@ -118,7 +119,8 @@ void Computer::operator=(const Computer &comp){
     users = new string[this->usersQuant];
     passwords = new string[this->usersQuant];
     
-    for (int i=0;i<usersQuant;i++){
+    for (int i=0;i<usersQuant;i++)
+	{
         this->users[i] = comp.users[i];
         this->passwords[i] = comp.passwords[i];
     }

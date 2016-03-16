@@ -4,13 +4,15 @@ using namespace std;
 
 PersonalComputer::PersonalComputer()
 :Computer("Windows 10", 1000, 1.1)
-{
+{	
+	displayWelcomeScreen();
 	this->name = "BMO"; 
 }
 
 PersonalComputer::PersonalComputer(const PersonalComputer &other)
 :Computer (static_cast < Computer > (other))
-{
+{	
+
 	this->name = other.name;
 }
 
@@ -102,4 +104,9 @@ bool PersonalComputer::operator==(const PersonalComputer &comp) const{
     	    return false;
 	}
 	return true;
+}
+
+void displayWelcomeScreen()
+{
+	cout << "\n          # Welcome !! #         \n ";
 }

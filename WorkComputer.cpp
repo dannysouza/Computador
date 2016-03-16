@@ -6,13 +6,15 @@ using namespace std;
 WorkComputer::WorkComputer()
 :Computer("Windows 7", 500, 1.0)
 {
+	displayWelcomeScreen();
+	
 	this->privacyPolicy = "\n Please don't hack anything thanks";
 }
 
 WorkComputer::PersonalComputer(const WorkComputer &other)
 :Computer (static_cast < Computer > (other))
 {
-	this-> //variavel especifica recebe other.variavel especifica
+	this-> privacypolicy = other.privacyPolicy;
 }
 
 WorkComputer::~WorkComputer()
@@ -152,4 +154,8 @@ bool WorkComputer::operator==(const WorkComputer &comp) const{
 	return true;
 }
 
+void displayWelcomeScreen()
+{
+	cout << "\n     Hi.     \n";
+}
 

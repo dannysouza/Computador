@@ -12,6 +12,20 @@ int main()
 {
 	int opt;
 	
+	cout << "\n Choose a device: \n 1 - Computer \n";
+	
+	cin >> opt;
+	
+	switch(opt)
+	{
+		case 1:
+			deviceComputer();
+	}
+
+}
+
+void deviceComputer()
+{
 	cout << "\n 		Choose a computer: \n\n 1 - Work Computer \n 2 - Personal Computer ";
 	cin >> opt;
 	
@@ -29,6 +43,7 @@ int main()
 			cout << "\n Please enter a valid option. \n";
 	}
 }
+
 
 void optionWorkC()
 {

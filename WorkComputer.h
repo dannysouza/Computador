@@ -18,6 +18,8 @@ class WorkComputer : public Computer
 		void exeCalculator();
 		void exeEditor();
 		
+		virtual void displayWelcomeScreen();
+		
 	private:
 		string privacyPolicy;
 };
