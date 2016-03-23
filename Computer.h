@@ -11,7 +11,8 @@
 
 class Computer : public Device 
 {	
-	public:
+public:
+        inline Computer() {};
 		Computer(const string &, float, float);
 		Computer(const Computer &);
 		~Computer();
@@ -22,8 +23,6 @@ class Computer : public Device
 	    void installNetworkDrivers();
 	    
 	    void connectToInternet();
-	    
-	    virtual void displayWelcomeScreen() = 0;
 		
      protected:
      	string operationalSystem;

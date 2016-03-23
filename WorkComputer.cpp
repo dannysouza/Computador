@@ -127,7 +127,7 @@ const WorkComputer &WorkComputer::operator=(const WorkComputer &comp){
     this->currentOSVersion = comp.currentOSVersion;
 }
 
-void displayWelcomeScreen()
+void WorkComputer::displayWelcomeScreen()
 {
 	cout << "\n     Hi.    \n";
 }

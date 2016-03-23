@@ -65,7 +65,7 @@ const PersonalComputer &PersonalComputer::operator=(const PersonalComputer &comp
     this->passwordsVector = comp.passwordsVector;
 }
 
-void displayWelcomeScreen()
+void PersonalComputer::displayWelcomeScreen()
 {
 	cout << "\n          # Welcome! #         \n ";
 }

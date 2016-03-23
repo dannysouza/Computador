@@ -1,5 +1,5 @@
 // Class Personal Computer
-
+#include <stdlib.h>
 #include "Computer.h"	
 #include <vector>
 
