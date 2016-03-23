@@ -16,7 +16,7 @@ class Computer : public Device
 		Computer(const Computer &);
 		~Computer();
 		
-		virtual void updatedOS();
+        void updatedOS();
 		static void launchOSVersion();
 	    
 	    void installNetworkDrivers();

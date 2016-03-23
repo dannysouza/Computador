@@ -9,6 +9,7 @@ void deviceComputer();
 
 void optionWorkC();
 void optionPersonalC();
+void option(Computer*);
 
 int main()
 {
@@ -33,21 +34,26 @@ void deviceComputer()
 	cout << "\n 		Choose a computer: \n\n 1 - Work Computer \n 2 - Personal Computer ";
 	cin >> opt;
 	
-	switch(opt)
-	{
-		case 1:
-			optionWorkC();
-			break;
-			
-		case 2:
-			optionPersonalC();
-			break;
-			
-		default:
-			cout << "\n Please enter a valid option. \n";
-	}
+	vector <Computer*> pcs;
+	
+	if (opt == 1) 
+	pcs.push_back(new WorkComputer());
+	else if (opt == 2)
+	pcs.push_back(new PersonalComputer()); 
+	
+	option(pcs.at(0));
 }
 
+void option(Computer  *computer)
+{
+	PersonalComputer *personalComp = dynamic_cast<PersonalComputer *>(computer);
+	WorkComputer *workComp = dynamic_cast<WorkComputer *>(computer);
+	
+	if(personalComp!=0)
+	    optionPersonalC();
+	else
+	    optionWorkC();
+}
 
 void optionWorkC()
 {
