@@ -10,35 +10,25 @@
 #include "NetworkAdapter.h"
 
 class Computer : public Device 
-{
-	friend ostream& operator<<(ostream &, const Computer &);
-	
+{	
 	public:
 		Computer(const string &, float, float);
 		Computer(const Computer &);
 		~Computer();
 		
-		bool logIn(const string &, const string &);
-		void logOff();
-		
 		virtual void updatedOS();
 		static void launchOSVersion();
-		
-		const Computer &operator=(const Computer &);
-	    bool operator==(const Computer &) const;
 	    
 	    void installNetworkDrivers();
 	    
 	    void connectToInternet();
 	    
-	    virtual void displayWelcomeScreen() = 0; 
+	    virtual void displayWelcomeScreen() = 0;
 		
      protected:
      	string operationalSystem;
      	float hdSize;
      	float availableStorage;
-     	string *users;
-     	string *passwords;
      	float currentOSVersion;
      	static float latestOSVersion;
      	int usersQuant;

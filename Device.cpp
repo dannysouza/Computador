@@ -1,6 +1,6 @@
 #include "Device.h"
 
-Device::Device
+Device::Device()
 {
 	turnedOn = false;
 }

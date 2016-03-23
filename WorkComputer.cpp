@@ -7,14 +7,18 @@ WorkComputer::WorkComputer()
 :Computer("Windows 7", 500, 1.0)
 {
 	displayWelcomeScreen();
+	installNetworkDrivers();
 	
 	this->privacyPolicy = "\n Please don't hack anything thanks";
 }
 
-WorkComputer::PersonalComputer(const WorkComputer &other)
-:Computer (static_cast < Computer > (other))
-{
-	this-> privacypolicy = other.privacyPolicy;
+WorkComputer::WorkComputer(const WorkComputer &other)
+{	
+	this->privacyPolicy = other.privacyPolicy;
+	
+	this->operationalSystem=other.operationalSystem;
+	this->hdSize=other.hdSize;
+	this->currentOSVersion=other.currentOSVersion;
 }
 
 WorkComputer::~WorkComputer()
@@ -59,7 +63,7 @@ void WorkComputer::exeCalculator()
 				break;
 	
 			default:
-				cout << "\n Error. Invalid number or operation. "
+				cout << "\n Error. Invalid number or operation. ";
 		}
 	}
 	while(op != 'x');
@@ -116,46 +120,15 @@ ostream& operator<<(ostream &output, const WorkComputer &display)
     return output;
 }
 
-void WorkComputer::operator=(const WorkComputer &comp){
+const WorkComputer &WorkComputer::operator=(const WorkComputer &comp){
     this->operationalSystem = comp.operationalSystem;
     this->hdSize = comp.hdSize;
     this->availableStorage = comp.availableStorage;
     this->currentOSVersion = comp.currentOSVersion;
-    this->usersQuant = comp.usersQuant; 
-    
-    delete [] users;
-    delete [] passwords;
-    
-    users = new string[this->usersQuant];
-    passwords = new string[this->usersQuant];
-    
-    for (int i=0;i<usersQuant;i++){
-        this->users[i] = comp.users[i];
-        this->passwords[i] = comp.passwords[i];
-    }
-}
-
-bool WorkComputer::operator==(const WorkComputer &comp) const{
-    if(operationalSystem != comp.operationalSystem)
-        return false;
-    if(hdSize != comp.hdSize)
-        return false;
-    if(availableStorage != comp.availableStorage)
-        return false;
-    if(currentOSVersion != comp.currentOSVersion)
-        return false;
-    if(usersQuant != comp.usersQuant)
-        return false;
-        
-    for(int i=0;i<usersQuant;i++){
-    	if(users[i] != comp.users[i] || passwords[i] != comp.passwords) 	
-    	    return false;
-	}
-	return true;
 }
 
 void displayWelcomeScreen()
 {
-	cout << "\n     Hi.     \n";
+	cout << "\n     Hi.    \n";
 }
 

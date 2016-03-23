@@ -12,7 +12,7 @@ class WorkComputer : public Computer
 		WorkComputer(const WorkComputer &);
 		~WorkComputer();
 		
-		const Computer &operator=(const WorkComputer &);
+		const WorkComputer &operator=(const WorkComputer &);
 	    bool operator==(const WorkComputer &) const;
 		
 		void exeCalculator();

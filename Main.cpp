@@ -5,6 +5,8 @@
 
 using namespace std;
 
+void deviceComputer();
+
 void optionWorkC();
 void optionPersonalC();
 
@@ -26,6 +28,8 @@ int main()
 
 void deviceComputer()
 {
+    int opt; 
+    
 	cout << "\n 		Choose a computer: \n\n 1 - Work Computer \n 2 - Personal Computer ";
 	cin >> opt;
 	
@@ -49,13 +53,11 @@ void optionWorkC()
 {
 	int opt;
     WorkComputer wc;
-    
-	wc.logOff();
 	
 	WorkComputer::launchOSVersion();
 	cout << "\n\n          Welcome          \n ";
     do{
-         cout << "\n\n 1 - Execute Calculator      3 - Log Off \n 2 - Execute Text Editor    4 - Update Windows \n 0 - Turn Off \n";
+         cout << "\n\n 1 - Execute Calculator \n 2 - Execute Text Editor    3 - Update Windows 4 - Connect to the internet \n 0 - Turn Off \n";
          cin >> opt;
          switch (opt)
          {
@@ -68,11 +70,11 @@ void optionWorkC()
                     break;
                     
              	case 3:
-    				wc.logOff();
+    				wc.updatedOS();
     				break;
     				
     			case 4:
-    				wc.updatedOS();
+    				wc.connectToInternet();
     				break;
     				
                 default:
@@ -90,10 +92,10 @@ void optionPersonalC()
 	pc.logOff();
 	
 	PersonalComputer::launchOSVersion();
-    
+
     cout << "\n\n          Welcome          \n ";
     do{
-         cout << "\n\n 1 - Execute Game      3 - Log Off \n 2 - Create new user account    4 - Update Windows \n 0 - Turn Off \n";
+         cout << "\n\n 1 - Execute Game      3 - Log Off \n 2 - Create new user account    4 - Update Windows 5 - Connect to the internet \n 6 - Install Network drivers \n 0 - Turn Off \n";
          cin >> opt;
          switch (opt)
          {
@@ -112,6 +114,13 @@ void optionPersonalC()
     			case 4:
     				pc.updatedOS();
     				break;
+    				
+    			case 5:
+    				pc.connectToInternet();
+    				break;
+    				
+    			case 6:
+    				pc.installNetworkDrivers();
     				
                 default:
                     cout << "\n\n -- Choose an option -- ";
