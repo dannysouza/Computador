@@ -32,16 +32,17 @@ void WorkComputer::exeCalculator()
 	
 	cout << "\n\n      # Calculator #       ";
 	cout << "\n 	(Press 'x' to exit. \n)";
-	
-	cout << "\n Number: ";
+    
+	do
+	{
+    cout << "\n Number: ";
 	cin >> number1;
 	cout << "\n Operation (+, -, *, /): ";
 	cin >> op;
-	cout << "\n Number: \n\n";
+	cout << "\n Number: ";
 	cin >> number2;		
 	
-	do
-	{
+        
 		switch(op)
 		{
 			case '+':
@@ -64,6 +65,7 @@ void WorkComputer::exeCalculator()
 	
 			default:
 				cout << "\n Error. Invalid number or operation. ";
+                break;
 		}
 	}
 	while(op != 'x');

@@ -31,17 +31,28 @@ void deviceComputer()
 {
     int opt; 
     
-	cout << "\n 		Choose a computer: \n\n 1 - Work Computer \n 2 - Personal Computer ";
-	cin >> opt;
+
 	
 	vector <Computer*> pcs;
 	
-	if (opt == 1) 
-	pcs.push_back(new WorkComputer());
-	else if (opt == 2)
-	pcs.push_back(new PersonalComputer()); 
-	
-	option(pcs.at(0));
+    do
+    {
+        cout << "\n Add a new computer to Workstation \n";
+        
+        cout << "\n 		Select the type of computer you want to add: \n\n 1 - Work Computer \n 2 - Personal Computer \n 0 - Exit \n";
+        cin >> opt;
+        
+        if (opt == 1)
+            pcs.push_back(new WorkComputer());
+        else if (opt == 2)
+            pcs.push_back(new PersonalComputer());
+	}
+    while(opt != 0);
+    
+    for(int i = 0; i<pcs.size(); i++)
+    {
+       option(pcs.at(i));
+    }
 }
 
 void option(Computer  *computer)
@@ -50,9 +61,11 @@ void option(Computer  *computer)
 	WorkComputer *workComp = dynamic_cast<WorkComputer *>(computer);
 	
 	if(personalComp!=0)
-	    optionPersonalC();
+        personalComp->installNetworkDrivers();
+	    // optionPersonalC(); 
 	else
-	    optionWorkC();
+        workComp->updatedOS();
+	    // optionWorkC();
 }
 
 void optionWorkC()
@@ -63,7 +76,7 @@ void optionWorkC()
 	WorkComputer::launchOSVersion();
 	cout << "\n\n          Welcome          \n ";
     do{
-         cout << "\n\n 1 - Execute Calculator \n 2 - Execute Text Editor    3 - Update Windows 4 - Connect to the internet \n 0 - Turn Off \n";
+         cout << "\n\n 1 - Execute Calculator \n 2 - Execute Text Editor   \n 3 - Update Windows \n 4 - Connect to the internet \n 0 - Turn Off \n";
          cin >> opt;
          switch (opt)
          {
@@ -101,7 +114,7 @@ void optionPersonalC()
 
     cout << "\n\n          Welcome          \n ";
     do{
-         cout << "\n\n 1 - Execute Game      3 - Log Off \n 2 - Create new user account    4 - Update Windows 5 - Connect to the internet \n 6 - Install Network drivers \n 0 - Turn Off \n";
+         cout << "\n\n 1 - Execute Game \n 2 - Create new user account \n 3 - Log Off \n 4 - Update Windows \n 5 - Connect to the internet \n 6 - Install Network drivers \n 0 - Turn Off \n";
          cin >> opt;
          switch (opt)
          {

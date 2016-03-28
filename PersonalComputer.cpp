@@ -5,9 +5,9 @@ using namespace std;
 PersonalComputer::PersonalComputer()
 :Computer("Windows 10", 1000, 1.1)
 {	
-	displayWelcomeScreen();
+	// displayWelcomeScreen();
 	
-	logOff();
+	// logOff();
 	
 	this->name = "BMO"; 
 }

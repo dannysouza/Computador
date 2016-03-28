@@ -22,4 +22,5 @@ class WorkComputer : public Computer
 		
 	private:
 		string privacyPolicy;
+        string name;
 };
