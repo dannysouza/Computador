@@ -35,7 +35,7 @@ void Computer::updatedOS()
 	
 	currentOSVersion = latestOSVersion;
 	
-	cout << "\n Operational System has been updated to version " << operationalSystem << latestOSVersion;
+	cout << "\n Operational System " << operationalSystem << " has been updated to version " << latestOSVersion;
 	
 	launchOSVersion();
 }

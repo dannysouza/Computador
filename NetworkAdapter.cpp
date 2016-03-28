@@ -11,7 +11,7 @@ NetworkAdapter::~NetworkAdapter()
 {
 }
 
-bool NetworkAdapter::installDrivers()
+void NetworkAdapter::installDrivers()
 {
 	if(driversInstalled)
 		cout << "\n Network drivers are already installed.";
