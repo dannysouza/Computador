@@ -5,8 +5,6 @@ using namespace std;
 PersonalComputer::PersonalComputer()
 :Computer("Windows 10", 1000, 1.1)
 {	
-	// displayWelcomeScreen();
-	
 	// logOff();
 	
 	this->name = "BMO"; 
@@ -59,16 +57,11 @@ const PersonalComputer &PersonalComputer::operator=(const PersonalComputer &comp
     this->hdSize = comp.hdSize;
     this->availableStorage = comp.availableStorage;
     this->currentOSVersion = comp.currentOSVersion;
-    this->usersQuant = comp.usersQuant; 
     
     this->usersVector = comp.usersVector;
     this->passwordsVector = comp.passwordsVector;
 }
 
-void PersonalComputer::displayWelcomeScreen()
-{
-	cout << "\n          # Welcome! #         \n ";
-}
 
 bool PersonalComputer::logIn(const string &userName, const string &password)
 {
@@ -111,4 +104,15 @@ void PersonalComputer::logOff()
     		}
     		break;	
 		}while (opt != 0);
+}
+
+void PersonalComputer::cleanCache()
+{
+    cout << "\n Cache cleaned. ";
+}
+
+void PersonalComputer::criticalUpdate()
+{
+    cleanCache();
+    updatedOS();
 }

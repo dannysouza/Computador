@@ -1,7 +1,7 @@
 // Work Computer
 
 #include "Computer.h"
-#include "NetworkAdapter.h"
+#include "Network.h"
 
 class WorkComputer : public Computer 
 {	
@@ -18,8 +18,8 @@ class WorkComputer : public Computer
 		void exeCalculator();
 		void exeEditor();
 		
-		virtual void displayWelcomeScreen();
-		
+        virtual void criticalUpdate();
+        
 	private:
 		string privacyPolicy;
         string name;

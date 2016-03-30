@@ -19,11 +19,13 @@ class PersonalComputer : public Computer
 		
 		void exeGame();
 		void createNewUser();
-		
-		virtual void displayWelcomeScreen();
 
         bool logIn(const string &, const string &);
 		void logOff();
+        
+        virtual void criticalUpdate();
+        
+        void cleanCache();
 		
 	private:
 		vector<string> usersVector;

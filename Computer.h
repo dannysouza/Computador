@@ -7,7 +7,7 @@
 
 #include "Device.h"
 #include "Date.h"
-#include "NetworkAdapter.h"
+#include "Network.h"
 
 class Computer : public Device 
 {	
@@ -18,11 +18,18 @@ public:
 		~Computer();
 		
         void updatedOS();
+        
 		static void launchOSVersion();
 	    
 	    void installNetworkDrivers();
 	    
 	    void connectToInternet();
+        
+        void displayWelcomeScreen();
+        
+        virtual void criticalUpdate() = 0;
+        
+        void removeMalwares();
 		
      protected:
      	string operationalSystem;
@@ -30,9 +37,8 @@ public:
      	float availableStorage;
      	float currentOSVersion;
      	static float latestOSVersion;
-     	int usersQuant;
      	Date downloadDate;
-     	NetworkAdapter network;
+     	Network network;
 };
 
 #endif 

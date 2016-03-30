@@ -60,14 +60,9 @@ void option(Computer  *computer)
 	PersonalComputer *personalComp = dynamic_cast<PersonalComputer *>(computer);
 	WorkComputer *workComp = dynamic_cast<WorkComputer *>(computer);
 	
-	if(personalComp!=0)
+	if(workComp!=0)
     {
-        personalComp->installNetworkDrivers();
-        optionPersonalC(); 
-	}
-    else
-    {
-        workComp->updatedOS();
+        workComp->criticalUpdate();
 	    optionWorkC();
     }
 }

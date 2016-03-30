@@ -6,7 +6,6 @@ using namespace std;
 WorkComputer::WorkComputer()
 :Computer("Windows 7", 500, 1.0)
 {
-	displayWelcomeScreen();
 	installNetworkDrivers();
 	
 	this->privacyPolicy = "\n Please don't hack anything thanks";
@@ -129,8 +128,9 @@ const WorkComputer &WorkComputer::operator=(const WorkComputer &comp){
     this->currentOSVersion = comp.currentOSVersion;
 }
 
-void WorkComputer::displayWelcomeScreen()
+void WorkComputer::criticalUpdate()
 {
-	cout << "\n     Hi.    \n";
+    installNetworkDrivers();
+    updatedOS();
+    removeMalwares();
 }
-
