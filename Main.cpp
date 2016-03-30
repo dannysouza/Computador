@@ -9,7 +9,7 @@ void deviceComputer();
 
 void optionWorkC();
 void optionPersonalC();
-void option(Computer*);
+void workStation(Computer*);
 
 int main()
 {
@@ -51,13 +51,12 @@ void deviceComputer()
     
     for(int i = 0; i<pcs.size(); i++)
     {
-       option(pcs.at(i));
+       workStation(pcs.at(i));
     }
 }
 
-void option(Computer  *computer)
+void workStation(Computer  *computer)
 {
-	PersonalComputer *personalComp = dynamic_cast<PersonalComputer *>(computer);
 	WorkComputer *workComp = dynamic_cast<WorkComputer *>(computer);
 	
 	if(workComp!=0)

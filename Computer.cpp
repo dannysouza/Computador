@@ -5,8 +5,6 @@ float Computer::latestOSVersion = 1.1;
 Computer::Computer(const string &OS, float hd, float currentV)
 :downloadDate(1, 1, 2001), Device(true, hd)
 {
-    displayWelcomeScreen();
-    
 	this->operationalSystem = OS;
 	this->hdSize = hd;
 	this->currentOSVersion = currentV;
@@ -55,11 +53,6 @@ void Computer::installNetworkDrivers()
 void Computer::connectToInternet()
 {
 	network.connectToInternet();
-}
-
-void Computer::displayWelcomeScreen()
-{
-	cout << "\n          # Welcome! #         \n ";
 }
 
 void Computer::removeMalwares()

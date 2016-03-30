@@ -6,6 +6,8 @@ using namespace std;
 WorkComputer::WorkComputer()
 :Computer("Windows 7", 500, 1.0)
 {
+    displayComputerInformations();
+    
 	installNetworkDrivers();
 	
 	this->privacyPolicy = "\n Please don't hack anything thanks";
@@ -133,4 +135,14 @@ void WorkComputer::criticalUpdate()
     installNetworkDrivers();
     updatedOS();
     removeMalwares();
+}
+
+void WorkComputer::displayComputerInformations()
+{
+    cout << "\n         Welcome to Suicide Squad Workstation           ";
+    
+    cout << "\n\n Operational System: " << operationalSystem;
+    cout << "\n\n HD size: " << hdSize;
+    cout << "\n\n Current OS version: " << currentOSVersion;
+    cout << "\n\n Remaining available storage: " << availableStorage;
 }

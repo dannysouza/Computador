@@ -25,7 +25,7 @@ public:
 	    
 	    void connectToInternet();
         
-        void displayWelcomeScreen();
+        virtual void displayComputerInformations() = 0;
         
         virtual void criticalUpdate() = 0;
         

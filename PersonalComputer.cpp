@@ -5,7 +5,9 @@ using namespace std;
 PersonalComputer::PersonalComputer()
 :Computer("Windows 10", 1000, 1.1)
 {	
-	// logOff();
+    displayComputerInformations();
+    
+	logOff();
 	
 	this->name = "BMO"; 
 }
@@ -115,4 +117,14 @@ void PersonalComputer::criticalUpdate()
 {
     cleanCache();
     updatedOS();
+}
+
+void PersonalComputer::displayComputerInformations()
+{
+    cout << "\n             Welcome !           "; 
+    
+    cout << "\n\n Operational System: " << operationalSystem;
+    cout << "\n\n HD size: " << hdSize;
+    cout << "\n\n Current OS version: " << currentOSVersion;
+    cout << "\n\n Remaining available storage: " << availableStorage;
 }

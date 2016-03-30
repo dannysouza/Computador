@@ -20,6 +20,8 @@ class WorkComputer : public Computer
 		
         virtual void criticalUpdate();
         
+        virtual void displayComputerInformations();
+        
 	private:
 		string privacyPolicy;
         string name;

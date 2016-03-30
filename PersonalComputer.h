@@ -26,6 +26,8 @@ class PersonalComputer : public Computer
         virtual void criticalUpdate();
         
         void cleanCache();
+        
+        virtual void displayDeviceInformations();
 		
 	private:
 		vector<string> usersVector;

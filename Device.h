@@ -14,7 +14,7 @@ class Device
     	void turnOn();
     	void turnOff();
     	
-    	virtual void displayWelcomeScreen() = 0;
+    	virtual void displayComputerInformations() = 0;
     	
 	protected:
 		bool turnedOn;
